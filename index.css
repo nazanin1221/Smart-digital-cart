@@ -85,3 +85,32 @@ img{
     margin-top: 20px;
     border-radius:10px;
 }
+/* result page*/
+.result-container{
+    margin-left:28rem;
+    margin-top: 14rem;
+    padding: 10px;
+    width:600px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.result-container h2{
+    text-align: center;
+    color: #304857;
+    margin-top:10px;
+}
+.result-container h3{
+     color: #304857;
+    margin-top:10px;
+}
+.result-container .btn a{
+  width:120px;
+  padding:15px;
+  background-color: #34617B;
+  color:#fff;
+}
+.result-container .btn{
+    margin-top: 160px;
+    margin-left: 190px;
+}
