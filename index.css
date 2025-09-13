@@ -10,7 +10,11 @@
 }
 body{
     color: #314862;
-   
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(65deg,#ffffffff , #9e9999ff );
+
 }
 
 .container{
@@ -56,7 +60,7 @@ body{
 #profile form .buttom {
     outline: none;
     border: none;
-    background-color:#2288ff;
+    background-color:#34617B;
     color: #fff;
     font-size: 15px;
     font-weight:600;
@@ -64,5 +68,11 @@ body{
 }
 
 #profile form .buttom:hover {
-    background-color: #3492fd;
+    background-color:#304857;
+}
+img{
+    width:575px; 
+    margin-left:260px ;
+    margin-top: 20px;
+    border-radius:10px;
 }
