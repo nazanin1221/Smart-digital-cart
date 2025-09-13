@@ -24,18 +24,18 @@
 
  <script>
 
-    const personData = JSON.parse(localStorage.getItem('personData'));
+    const personData = JSON.parse(localStorage.getItem("personData"));
         
        if (personData) {
-            document.getElementById('summary').textContent = personData.summary;
-            document.getElementById('retirement').textContent = personData.retirementMessage;
-            document.getElementById('friendsInfo').textContent = 
-                "اولین دوست: " + personData.firstFriend + 
-                " | آخرین دوست: " + personData.lastFriend;
-            document.getElementById('calculatedAge').textContent = personData.age + " سال";
+            document.getElementById("summary").textContent = personData.summary;
+            document.getElementById("retirement").textContent = personData.retirementMessage;
+            document.getElementById("friendsInfo").textContent = 
+                "First Friend: " + personData.firstFriend + 
+                "Last friend: " + personData.lastFriend;
+            document.getElementById("calculatedAge").textContent = personData.age + "Year";
         } else {
-            document.getElementById('results').innerHTML = 
-                "<p>داده ای یافت نشد. لطفاً از <a href='index.html'>صفحه اصلی</a> شروع کنید.</p>";
+            document.getElementById("results").innerHTML = 
+                "<p> No data found. Please start from the <a href='index.html'>Homepage</a>.</p>";
         };
     </script>
 </body>
