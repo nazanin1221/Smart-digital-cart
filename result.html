@@ -21,5 +21,22 @@
             </div>
         </div>
     </div>
+
+ <script>
+
+    const personData = JSON.parse(localStorage.getItem('personData'));
+        
+       if (personData) {
+            document.getElementById('summary').textContent = personData.summary;
+            document.getElementById('retirement').textContent = personData.retirementMessage;
+            document.getElementById('friendsInfo').textContent = 
+                "اولین دوست: " + personData.firstFriend + 
+                " | آخرین دوست: " + personData.lastFriend;
+            document.getElementById('calculatedAge').textContent = personData.age + " سال";
+        } else {
+            document.getElementById('results').innerHTML = 
+                "<p>داده ای یافت نشد. لطفاً از <a href='index.html'>صفحه اصلی</a> شروع کنید.</p>";
+        };
+    </script>
 </body>
 </html>
