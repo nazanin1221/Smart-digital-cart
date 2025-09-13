@@ -70,6 +70,15 @@ body{
 #profile form .buttom:hover {
     background-color:#304857;
 }
+ #profile a {
+    color: #000;
+    font-size: medium;
+}
+#profile a:hover{ 
+   font-size: large;
+   font-weight: 500;
+}
+
 img{
     width:575px; 
     margin-left:260px ;
