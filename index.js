@@ -1,4 +1,4 @@
-   // Variables & Operators
+   // 1.Variables & Operators
       const Form = document.querySelector("#Form");
 Form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -17,3 +17,23 @@ Form.addEventListener("submit", function (e) {
     console.log(ArrayForm)
 
 })
+    //  2.Functions
+        
+        // تابع محاسبه سن 
+function calcAge(birthYear) {
+
+        const currentYear = new Date().getFullYear();
+        return currentYear - birthYear;
+    }
+
+    // تابع محاسبه سال های باقی مانده تا بازنشستگی
+function yearsUntilRetirement(birthYear, firstName, retirementAge) {
+        const age = calcAge(birthYear);
+        const yearsLeft = retirementAge - age;
+            
+            if (yearsLeft > 0) {
+                return firstName + " تا " + yearsLeft + " سال دیگر بازنشسته می‌شود.";
+            } else {
+                return firstName + " هم اکنون بازنشسته است.";
+            }
+ }
