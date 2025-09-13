@@ -90,4 +90,35 @@ const yearsLeft = this.retirementAge - this.age;
                     
         return summary; } };
  }
+   // Manage Form
+ document.getElementById('Form').addEventListener('submit', function(event) {
+ event.preventDefault(); // جلوگیری از ارسال فرم
+            
+        // جمع آوری داده های فرم
+ const formData = {
+  fullName: document.getElementById("FullName").value,
+  age: document.getElementById("Age").value,
+  job: document.getElementById("Job").value,
+  friends: document.getElementById("Friends").value,
+  certificateStatus: document.getElementById("CertificateStatus").value,
+  retirementAge: document.getElementById("RetirementAge").value
+            };
+                   
+    // person
+     const person = createPersonObject(formData);
+    localStorage.setItem('personData', JSON.stringify({
+         summary: person.getSummary(),
+         retirementMessage: yearsUntilRetirement(
+         person.birthYear, 
+         person.firstName, 
+         person.retirementAge ),
+
+     firstFriend: person.friends[0],
+    lastFriend: person.friends[person.friends.length - 1],
+     age: person.calcAge() }));
+
+     // go to thepage result
+            window.location.href = 'result.html';
+        });
+
         
