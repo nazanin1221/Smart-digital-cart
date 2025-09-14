@@ -4,12 +4,12 @@ Form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const ArrayForm = [];
-    const Information = ["#FullName", "#Age", "#Job", "#Friends", "CertificateStatus", "RetirementAge"];
+    const Information = ["#FullName", "#Age", "#Job", "#Friends", "#CertificateStatus", "#RetirementAge"];
 
 
     for (const child of Information) {
         const item = document.querySelector(child)
-        const value = item.value.trim();
+        const value = item.value.trim(); // trim():فضای خالی دو طرف را پاک میکند
         ArrayForm.push(value);
 
     }
@@ -32,9 +32,9 @@ function yearsUntilRetirement(birthYear, firstName, retirementAge) {
     const yearsLeft = retirementAge - age;
 
     if (yearsLeft > 0) {
-        return firstName + " تا " + yearsLeft + " سال دیگر بازنشسته می‌شود.";
+        return firstName + " until" + yearsLeft +"She/he will retire next year.";
     } else {
-        return firstName + " هم اکنون بازنشسته است.";
+        return firstName + " She/he is now retired. ";
     }
 }
 
@@ -44,7 +44,7 @@ function createFriendsArray(numFriends) {
     const friends = [];
     for (let i = 1; i <= numFriends; i++) {
 
-        friends.push("دوست " + i);
+        friends.push("Friend" + i);
     }
 
     return friends;
@@ -54,7 +54,7 @@ function createFriendsArray(numFriends) {
 // person با داده های فرم
 function createPersonObject(formData) {
     const numFriends = parseInt(formData.friends);
-    const hasLicense = formData.certificateStatus.toLowerCase() === 'yes';
+    const hasLicense = formData.certificateStatus.toLowerCase() === "yes";
 
     return {
         firstName: formData.fullName,
@@ -65,7 +65,7 @@ function createPersonObject(formData) {
         retirementAge: parseInt(formData.retirementAge),
         //  محاسبه سن
         calcAge: function () {
-            this.age = new Date().getFullYear() - this.birthYear;
+            this.age = new Date().getFullYear() - this.birthYear;// this:دسترسی به ویژگی های دیگر 
             return this.age;
         },
         //  دریافت خلاصه اطلاعات
@@ -97,7 +97,7 @@ function createPersonObject(formData) {
     };
 }
 // Manage Form
-document.getElementById('Form').addEventListener('submit', function (event) {
+document.getElementById("Form").addEventListener("submit", function (event) {
     event.preventDefault(); // جلوگیری از ارسال فرم
 
     // جمع آوری داده های فرم
@@ -112,7 +112,7 @@ document.getElementById('Form').addEventListener('submit', function (event) {
 
     // person
     const person = createPersonObject(formData);
-    localStorage.setItem('personData', JSON.stringify({
+    localStorage.setItem("personData" , JSON.stringify({
         summary: person.getSummary(),
         retirementMessage: yearsUntilRetirement(
             person.birthYear,
@@ -124,7 +124,7 @@ document.getElementById('Form').addEventListener('submit', function (event) {
         age: person.calcAge()
     }));
 
-    // go to thepage result
-    window.location.href = 'result.html';
+    // go to the page result
+    window.location.href = "result.html";
 });
 
